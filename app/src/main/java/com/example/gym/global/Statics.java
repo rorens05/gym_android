@@ -2,13 +2,10 @@ package com.example.gym.global;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.gym.activities.recycler_adapters.RoutineAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,8 +13,6 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 
 public class Statics {
@@ -58,11 +53,11 @@ public class Statics {
     }
 
     public static String getDaysURL(){
-        return ConstantVariables.GET_DAYS_URL + "?id=" + StaticVariables.user_id;
+        return ConstantVariables.GET_DAYS_URL + "?id=" + GlobalVariables.user_id;
     }
 
     public static String getExerciseURL(){
-        return ConstantVariables.GET_EXERCISES_URL + "?id=" + StaticVariables.selectedRoutine.id;
+        return ConstantVariables.GET_EXERCISES_URL + "?id=" + GlobalVariables.selectedRoutine.id;
     }
 
     public static Date stringToDate(String sdate){
@@ -82,5 +77,9 @@ public class Statics {
     public static String getDate(Date date){
         DateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
         return dateFormat.format(date);
+    }
+
+    public static String getHealthURL() {
+        return ConstantVariables.GET_HEALTH + "?id=" + GlobalVariables.selectedDay.id;
     }
 }

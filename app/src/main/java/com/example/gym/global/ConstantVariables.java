@@ -8,4 +8,6 @@ public class ConstantVariables {
     public static final String GET_DAYS_URL =  SERVER + "get_days";
     public static final String GET_EXERCISES_URL =  SERVER + "get_exercises";
     public static final String CREATE_DAY =  SERVER + "create_day";
+    public static final String ADD_ROUTINE =  SERVER + "add_routine";
+    public static final String GET_HEALTH =  SERVER + "get_health";
 }

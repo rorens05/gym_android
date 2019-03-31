@@ -14,10 +14,9 @@ import android.widget.TextView;
 
 import com.example.gym.R;
 import com.example.gym.activities.ChangePasswordActivity;
-import com.example.gym.global.StaticVariables;
 import com.squareup.picasso.Picasso;
 
-import static com.example.gym.global.StaticVariables.user;
+import static com.example.gym.global.GlobalVariables.user;
 
 public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

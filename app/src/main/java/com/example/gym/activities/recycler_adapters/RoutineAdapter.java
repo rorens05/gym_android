@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.gym.R;
 import com.example.gym.activities.ExerciseActivity;
-import com.example.gym.global.StaticVariables;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.models.Routine;
 import com.squareup.picasso.Picasso;
 
@@ -57,7 +56,7 @@ public class RoutineAdapter extends RecyclerView.Adapter<RoutineAdapter.MyViewHo
         myViewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StaticVariables.selectedRoutine = routine;
+                GlobalVariables.selectedRoutine = routine;
                 context.startActivity(new Intent(context, ExerciseActivity.class));
             }
         });

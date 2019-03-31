@@ -18,11 +18,10 @@ import com.example.gym.activities.fragments.HistoryFragment;
 import com.example.gym.activities.fragments.ProfileFragment;
 import com.example.gym.activities.fragments.RoutineFragment;
 import com.example.gym.global.ConstantVariables;
-import com.example.gym.global.StaticVariables;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.global.Statics;
 import com.example.gym.libraries.MySingleton;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,7 +82,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> params = new HashMap<>();
-                params.put("user_id", StaticVariables.user_id);
+                params.put("user_id", GlobalVariables.user_id);
                 return params;
             }
         };

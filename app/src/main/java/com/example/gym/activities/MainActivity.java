@@ -11,17 +11,14 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.gym.R;
 import com.example.gym.global.ConstantVariables;
-import com.example.gym.global.StaticVariables;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.global.Statics;
 import com.example.gym.libraries.MyJSONObject;
 import com.example.gym.libraries.MySingleton;
 import com.example.gym.models.User;
-
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 MyJSONObject myJSONObject = new MyJSONObject(Statics.parseJSON(response));
                 if (myJSONObject.isSuccess()) {
                     MyJSONObject data = new MyJSONObject(myJSONObject.getJSON("data"));
-                    StaticVariables.user = new User(
+                    GlobalVariables.user = new User(
                             data.get("name"),
                             data.get("email"),
                             data.get("contact_no"),
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             data.get("birthday"),
                             data.get("image")
                     );
-                    StaticVariables.user_id = data.get("id");
+                    GlobalVariables.user_id = data.get("id");
                     startActivity(new Intent(MainActivity.this, Dashboard.class));
 
                 }else{

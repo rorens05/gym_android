@@ -1,9 +1,7 @@
 package com.example.gym.activities;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.example.gym.R;
 import com.example.gym.global.ConstantVariables;
-import com.example.gym.global.StaticVariables;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.global.Statics;
 import com.example.gym.libraries.MyJSONObject;
 import com.example.gym.libraries.MySingleton;
@@ -72,7 +70,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> params = new HashMap<>();
-                params.put("email", StaticVariables.user.email);
+                params.put("email", GlobalVariables.user.email);
                 params.put("old_password", oldPassword.getText().toString());
                 params.put("new_password", newPassword.getText().toString());
                 params.put("confirm_password", confirmPassword.getText().toString());

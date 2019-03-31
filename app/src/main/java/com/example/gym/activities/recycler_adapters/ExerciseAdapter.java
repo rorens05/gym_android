@@ -1,6 +1,7 @@
 package com.example.gym.activities.recycler_adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.gym.R;
+import com.example.gym.activities.ExerciseDetailsActivity;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.models.Exercise;
 import com.squareup.picasso.Picasso;
 
@@ -43,7 +45,8 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.MyView
         myViewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, exercise.name, Toast.LENGTH_SHORT).show();
+                GlobalVariables.selectedExercise = exercise;
+                context.startActivity(new Intent(context, ExerciseDetailsActivity.class));
             }
         });
 

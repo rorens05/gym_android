@@ -1,6 +1,7 @@
 package com.example.gym.activities.recycler_adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.gym.R;
+import com.example.gym.activities.DayDetailsActivity;
+import com.example.gym.global.GlobalVariables;
 import com.example.gym.global.Statics;
 import com.example.gym.models.Day;
 
@@ -51,7 +53,9 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.MyViewHolder> {
         myViewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, day.day_no + " was clicked", Toast.LENGTH_SHORT).show();
+                GlobalVariables.selectedDay = day;
+                context.startActivity(new Intent(context, DayDetailsActivity.class));
+
             }
         });
     }
