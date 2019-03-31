@@ -3,7 +3,7 @@
     package="com.example.gym">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.DayDetailsActivity"></activity>
+        <activity android:name=".activities.EditHealthActivity"></activity>
+        <activity android:name=".activities.DayDetailsActivity" />
         <activity android:name=".activities.ExerciseDetailsActivity" />
         <activity android:name=".activities.ExerciseActivity" />
         <activity android:name=".activities.ChangePasswordActivity" />

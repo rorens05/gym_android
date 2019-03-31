@@ -5,6 +5,7 @@ import com.example.gym.models.Exercise;
 import com.example.gym.models.HealthStatus;
 import com.example.gym.models.Routine;
 import com.example.gym.models.User;
+import com.example.gym.models.UserRoutine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +22,16 @@ public class GlobalVariables {
     public static List<Exercise> exerciseList = new ArrayList<>();
     public static Exercise selectedExercise = null;
 
+    public static List<UserRoutine> userRoutineList = new ArrayList<>();
+
     public static String user_id = "1";
 
     public static HealthStatus time_in = null;
     public static HealthStatus time_out = null;
+
+    public static HealthStatus selectedHealthStatus;
+
+    public static String compressed_bitmap = null;
+
 
 }

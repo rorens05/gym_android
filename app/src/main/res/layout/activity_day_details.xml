@@ -98,7 +98,7 @@
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/time_in_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/no_image" />
@@ -129,7 +129,7 @@
                             android:text="Height:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_address"
+                            android:id="@+id/time_in_height"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -153,7 +153,7 @@
                             android:text="Weight:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_gender"
+                            android:id="@+id/time_in_weight"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -177,7 +177,7 @@
                             android:text="Blood pressure:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/time_in_blood_pressure"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -201,7 +201,7 @@
                             android:text="Sugar:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/time_in_sugar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -225,13 +225,22 @@
                             android:text="Waist line:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/time_in_waste_line"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="0"
                             android:textColor="@android:color/black" />
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_edit_time_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="Edit"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/div11"
@@ -260,7 +269,7 @@
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/time_out_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/no_image" />
@@ -291,7 +300,7 @@
                             android:text="Height:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_address"
+                            android:id="@+id/time_out_height"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -315,7 +324,7 @@
                             android:text="Weight:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_gender"
+                            android:id="@+id/time_out_weight"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -339,7 +348,7 @@
                             android:text="Blood pressure:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/time_out_bp"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -363,7 +372,7 @@
                             android:text="Sugar:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/time_out_sugar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -387,13 +396,22 @@
                             android:text="Waist line:	" />
 
                         <TextView
-                            android:id="@+id/txt_profile_birthday"
+                            android:id="@+id/to_waist_line"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="0"
                             android:textColor="@android:color/black" />
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_edit_time_out"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="Edit"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/div11"
@@ -416,6 +434,7 @@
                 android:textSize="24sp" />
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/dd_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

@@ -82,4 +82,8 @@ public class Statics {
     public static String getHealthURL() {
         return ConstantVariables.GET_HEALTH + "?id=" + GlobalVariables.selectedDay.id;
     }
+
+    public static String getUserRoutineURL() {
+        return ConstantVariables.GET_USER_ROUTINES + "?id=" + GlobalVariables.selectedDay.id;
+    }
 }
