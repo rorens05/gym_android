@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
                             data.get("image")
                     );
                     StaticVariables.user_id = data.get("id");
-
-                    Toast.makeText(MainActivity.this, "Welcome User", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, Dashboard.class));
 
                 }else{

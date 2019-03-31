@@ -77,14 +77,10 @@ public class RoutineFragment extends Fragment {
     }
 
     public void loadRecyclerView() {
-
-        Collections.reverse(StaticVariables.routineList);
         RoutineAdapter adapter = new RoutineAdapter(StaticVariables.routineList, getActivity());
         recyclerView.setAdapter(adapter);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
         recyclerView.setLayoutManager(linearLayoutManager);
     }
 }

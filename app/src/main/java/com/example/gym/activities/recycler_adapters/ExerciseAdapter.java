@@ -1,7 +1,6 @@
 package com.example.gym.activities.recycler_adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -13,73 +12,66 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gym.R;
-import com.example.gym.activities.ExerciseActivity;
-import com.example.gym.global.StaticVariables;
-import com.example.gym.models.Routine;
+import com.example.gym.models.Exercise;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class RoutineAdapter extends RecyclerView.Adapter<RoutineAdapter.MyViewHolder> {
+public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.MyViewHolder> {
 
-    private static final String TAG = "RoutineAdapter";
-    List<Routine> routines;
+    List<Exercise> exerciseList = new ArrayList<>();
     Context context;
 
-    public RoutineAdapter(List<Routine> routines, Context context) {
-        this.routines = routines;
+    public ExerciseAdapter(List<Exercise> exerciseList, Context context) {
+        this.exerciseList = exerciseList;
         this.context = context;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_routines, viewGroup,
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_exercise, viewGroup,
                 false);
-        return new MyViewHolder(view);
+        return new ExerciseAdapter.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        final Routine routine = routines.get(i);
+        final Exercise exercise = exerciseList.get(i);
+        myViewHolder.name.setText(exercise.name);
+        myViewHolder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, exercise.name, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        if (routine.image.equalsIgnoreCase("")) {
+        if (exercise.image.equalsIgnoreCase("")) {
             myViewHolder.image.setBackgroundResource(R.drawable.logo);
         }else{
             Picasso.get()
-                    .load(routine.image)
+                    .load(exercise.image)
                     .resize(300, 150)
                     .centerCrop()
                     .into(myViewHolder.image);
         }
-
-        myViewHolder.name.setText(routine.name);
-        myViewHolder.container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StaticVariables.selectedRoutine = routine;
-                context.startActivity(new Intent(context, ExerciseActivity.class));
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return routines.size();
+        return exerciseList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
         ImageView image;
         TextView name;
-
         ConstraintLayout container;
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.exercise_image);
-            name = itemView.findViewById(R.id.routine_name);
-            container = itemView.findViewById(R.id.routine_container);
+            name = itemView.findViewById(R.id.exercise_name);
+            container = itemView.findViewById(R.id.exercise_container);
         }
     }
 }

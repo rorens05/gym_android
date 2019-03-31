@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gym.R;
+import com.example.gym.global.Statics;
 import com.example.gym.models.Day;
 
 import java.util.ArrayList;
@@ -37,9 +38,16 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+
         final Day day = dayList.get(i);
+
+        String dayName = Statics.getDay(Statics.stringToDate(day.date_created));
+        String date = Statics.getDate(Statics.stringToDate(day.date_created));
+        String fullDate = dayName + "\n" + date;
+
         myViewHolder.day_no.setText("Day " + day.day_no);
-        myViewHolder.day.setText(day.date_created);
+
+        myViewHolder.day.setText(fullDate);
         myViewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
